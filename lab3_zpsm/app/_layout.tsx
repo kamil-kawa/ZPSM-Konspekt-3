@@ -1,24 +1,21 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack>
+      {/* Konfigurujemy tylko nasz główny ekran (app/index.tsx).
+        Mówimy mu, aby nie pokazywał górnego paska (header).
+      */}
+      <Stack.Screen 
+        name="index" 
+        options={{ 
+          headerShown: false 
+        }} 
+      />
+      
+      {/* Nie musimy tu nic dodawać dla SimpleCalculator ani ScientificCalculator,
+        ponieważ nie są to osobne ekrany.
+      */}
+    </Stack>
   );
 }

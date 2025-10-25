@@ -3,7 +3,7 @@
     "name": "lab3_zpsm",
     "slug": "lab3_zpsm",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/images/icon.png",
     "scheme": "lab3zpsm",
     "userInterfaceStyle": "automatic",
